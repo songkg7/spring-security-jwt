@@ -1,4 +1,4 @@
-package me.silvernine.tutorial.controller;
+package me.harilsong.tutorial.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
