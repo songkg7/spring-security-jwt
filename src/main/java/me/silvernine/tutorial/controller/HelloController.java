@@ -1,4 +1,4 @@
-package com.springsecurity.jwt.controller;
+package me.silvernine.tutorial.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
