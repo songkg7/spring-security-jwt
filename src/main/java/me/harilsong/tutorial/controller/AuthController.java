@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import me.harilsong.tutorial.dto.LoginDto;
 import me.harilsong.tutorial.dto.TokenDto;
+import me.harilsong.tutorial.dto.TokenRequestDto;
 import me.harilsong.tutorial.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,4 +24,8 @@ public class AuthController {
         return authService.login(loginDto);
     }
 
+    @PostMapping("/reissue")
+    public ResponseEntity<TokenDto> reissue(@RequestBody TokenRequestDto tokenRequestDto) {
+        return authService.reissue(tokenRequestDto);
+    }
 }
