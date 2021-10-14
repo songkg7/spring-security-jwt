@@ -22,11 +22,11 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findOneWithAuthoritiesByUsername(username)
-                .map(user -> createUser(username, user))
+                .map(this::createUser)
                 .orElseThrow(() -> new UsernameNotFoundException("유저 정보를 찾을 수 없습니다."));
     }
 
-    private UserDetails createUser(String username, User user) {
+    private UserDetails createUser(User user) {
         if (!user.isActivated()) {
             throw new RuntimeException("활성화되어 있지 않습니다.");
         }
