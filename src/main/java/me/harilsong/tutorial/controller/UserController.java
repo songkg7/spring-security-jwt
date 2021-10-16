@@ -17,8 +17,6 @@ public class UserController {
 
     private final UserService userService;
 
-
-
     @GetMapping("/user")
     @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<User> getMyUserInfo() {
